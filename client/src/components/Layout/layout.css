@@ -1,0 +1,44 @@
+:root{
+    --primary: rgb(218, 127, 41);
+    --primaryText:rgb(255 249 171);
+    --secondary:rgb(111 49 31);
+    --tertiary:rgb(88 19 17);
+    --dark:rgb(43, 6, 5);
+    --medium:#cebfa6;
+    --lightish:#dcd5c5;
+    --light:#faf5f0;
+    --darkish: rgba(34, 34, 34, 0.52);
+    --semiDark: rgba(34, 34, 34, 0.87);
+    --transparentDark: #222222e8;
+    --gradient1: linear-gradient(to bottom right, var(--dark), var(--tertiary));
+    --gradient2: linear-gradient(to top left, var(--dark), var(--tertiary));
+
+}
+
+.rocky{
+    font-family: 'rockwell'; 
+    font-weight: bold;
+}
+
+.textPrimary{
+    color: var(--primaryText) !important;
+}
+
+.Layout {
+    text-align: center;
+    background: radial-gradient(circle at center, rgb(250 240 160), rgb(97 68 58) 100%);
+    min-height: 100vh;
+    min-width: 100vw; ;
+    position: relative;
+  }
+  
+  .Layout main{
+    position: relative; 
+    top: 9vh; 
+    min-height: 91vh;
+    background: no-repeat center/contain url('landingBG.png'); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }

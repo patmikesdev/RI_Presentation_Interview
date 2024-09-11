@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=development node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "express": "^4.20.0",
+    "mongoose": "^8.6.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.4"
+  },
+  "imports" : {
+    "#config": "./config/index.js"
+  }
+}

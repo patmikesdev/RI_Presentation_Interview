@@ -1,0 +1,46 @@
+/* NAV STYLES */
+.Layout nav {
+    background: linear-gradient(to bottom right, var(--dark), var(--tertiary));
+}
+/* #homeLink{
+    border: 3px solid transparent; 
+    border-top-left-radius: 50% 25%;
+    border-bottom-left-radius: 50% 25%;
+    border-top-right-radius: 50% 25%;
+    border-bottom-right-radius: 50% 25%;
+}
+
+#homeLink:hover{
+    border: 3px solid var(--light);
+    background-color: var(--palleteGray)
+}
+#homeLink.active{
+    border: 3px solid var(--light);
+    background-color: var(--primary)
+} */
+    /* wide nav styles */
+
+.wideNav .active{
+    border: 2px solid var(--light) !important; 
+    background-color: var(--primary);
+    /* color: var(--light);  */
+}
+
+.wideNav .nav-link{
+    /* color: var(--primaryText); */
+    border: 2px solid transparent; 
+    border-top-left-radius: 20% 35%;
+    border-top-right-radius: 20% 35%;
+    box-sizing: border-box;
+    transition: color .25s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out .10s;
+    position: relative;
+    top: 1px; 
+}
+
+.wideNav .nav-link:hover:not(.active){
+    background-color: var(--secondary);
+    border: 2px solid var(--primaryText); 
+    color: var(--light) !important;  
+}
+
+/* END NAV STYLES */
