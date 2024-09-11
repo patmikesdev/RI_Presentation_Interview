@@ -1,11 +1,43 @@
-# RI_Presentation_Interview
+# RI Presentation Interview for Patrick Mikes, 9/12
 
-# To start mongod server: mongod --dbpath /usr/local/var/mongodb
+- ### To view rendered markdown in VSC, press shift cmd v 
 
+## Set Up Instructions
+- ### To start mongod server, in separate terminal window, enter the command
 
-> const path = require('path')
-undefined
-> path.resolve('./server/database/mongo')
-'/Users/patrickmikes/Documents/Career Development/Interviewing/patmikesdev-RI_Presentation_Interview/server/database/mongo'
+```
+    mongod --dbpath /usr/local/var/mongodb
+```
 
-git commit -m "started using a separate directory for the db, see server/database/mongo"
+- ### Split Terminal windows in VSC
+    - We want two terminals open simultaneously, one representing our front end dev server (create react app), the other our backend API server with express
+    - To open the integrated terminal with VSC, you can press the key combination ctrl and \` (the \ is an escape character for the markdown format, it's not one you press. If you're seeing that, you should hit shift cmd v to see the rendered version of this markdown file) 
+    - Once you have a single terminal open, to open a split second terminal, you can press the keys cmd \\. Alternatively in the terminal toolbar right above the terminal window in vsc, you can click the split pane icon.
+    
+- ### Server set up
+    - From the root project directory, enter the server/ directory with the command
+    ```
+     cd server/
+    ```
+    - To seed the DB with the initial Data, run the following command
+    ```
+    npm run seed
+    ```
+    Alternatively, you could also run
+    ```
+    npm run importDBfromJSON
+    ```
+    - At this point, you should be ready to launch the backend server, just run the command
+    ```
+    npm start
+    ```
+
+- ### Front End Dev Server set up
+    - From the root project directory, enter the client/ directory with the command
+    ```
+     cd client/
+    ```
+    - All you should need to do now to launch the dev server from create-react-app is run the command
+    ```
+    npm start
+    ```
