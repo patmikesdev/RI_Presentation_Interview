@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=development node index.js"
+    "start": "NODE_ENV=development node index.js",
+    "seed": "node ./database/seed/scripts/restore.js",
+    "backup": "node ./database/seed/scripts/backup.js",
+    "importDBfromJSON": "node ./database/seed/scripts/importJSON.js"
   },
   "keywords": [],
   "author": "",
