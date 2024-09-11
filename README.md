@@ -19,6 +19,10 @@
     ```
      cd server/
     ```
+    - Install the node modules
+    ```
+    npm install
+    ```
     - To seed the DB with the initial Data, run the following command
     ```
     npm run seed
@@ -36,6 +40,10 @@
     - From the root project directory, enter the client/ directory with the command
     ```
      cd client/
+    ```
+    - Install the node modules
+    ```
+    npm install
     ```
     - All you should need to do now to launch the dev server from create-react-app is run the command
     ```
