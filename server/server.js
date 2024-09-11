@@ -5,7 +5,7 @@ import chalk from 'chalk'
 import express from 'express'
 import morgan from 'morgan'
 import path from 'path'
-// import {existsSync} from 'fs'
+import MovieRouter from './routing/MovieRouter.js'
 
 //Log in console what mode we're in when server starts up (dev, test, prod, etc. )
 const { NODE_ENV } = process.env
@@ -26,6 +26,8 @@ app.use(morgan('dev'))
 //         extensions: ['html', 'css', 'js', 'png', 'ico', 'json', 'pdf'],
 //     })
 // );
+
+app.use('/api', MovieRouter) 
 
 //fall through route handler when no other resource matched request
 app.get('*', (req, res, next) => {

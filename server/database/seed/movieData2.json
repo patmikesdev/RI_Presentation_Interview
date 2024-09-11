@@ -1,0 +1,362 @@
+[
+  {
+    "title": "Everything Everywhere All at Once",
+    "year": 2022,
+    "description": "A Chinese-American woman embarks on an epic multiverse journey to save existence.",
+    "id": "Everything%20Everywhere%20All%20at%20Once"
+  },
+  {
+    "title": "CODA",
+    "year": 2021,
+    "description": "The only hearing member of a deaf family pursues her love for singing while managing family obligations.",
+    "id": "CODA"
+  },
+  {
+    "title": "Nomadland",
+    "year": 2020,
+    "description": "A woman in her sixties who lost everything during the Great Recession becomes a modern nomad, traveling the American West.",
+    "id": "Nomadland"
+  },
+  {
+    "title": "Parasite",
+    "year": 2019,
+    "description": "A poor family schemes to work for a wealthy household, leading to a shocking and deadly outcome.",
+    "id": "Parasite"
+  },
+  {
+    "title": "Green Book",
+    "year": 2018,
+    "description": "A bouncer from the Bronx drives an African-American pianist through the racially segregated South on a concert tour.",
+    "id": "Green%20Book"
+  },
+  {
+    "title": "The Shape of Water",
+    "year": 2017,
+    "description": "A mute woman forms a bond with an amphibious creature held in captivity at a government lab.",
+    "id": "The%20Shape%20of%20Water"
+  },
+  {
+    "title": "Moonlight",
+    "year": 2016,
+    "description": "The life of a young black man is depicted in three stages as he grapples with his identity and sexuality.",
+    "id": "Moonlight"
+  },
+  {
+    "title": "Spotlight",
+    "year": 2015,
+    "description": "The Boston Globe’s investigative team uncovers widespread child abuse within the Catholic Church.",
+    "id": "Spotlight"
+  },
+  {
+    "title": "Birdman",
+    "year": 2014,
+    "description": "A washed-up actor known for playing a superhero attempts to revive his career by producing a Broadway play.",
+    "id": "Birdman"
+  },
+  {
+    "title": "12 Years a Slave",
+    "year": 2013,
+    "description": "A free black man is kidnapped and sold into slavery, enduring years of suffering before regaining his freedom.",
+    "id": "12%20Years%20a%20Slave"
+  },
+  {
+    "title": "Argo",
+    "year": 2012,
+    "description": "A CIA agent uses a fake movie production as cover to rescue six Americans trapped in Iran during the 1979 hostage crisis.",
+    "id": "Argo"
+  },
+  {
+    "title": "The Artist",
+    "year": 2011,
+    "description": "A silent film star’s career fades with the advent of talkies, while a young actress rises to fame in Hollywood.",
+    "id": "The%20Artist"
+  },
+  {
+    "title": "The King’s Speech",
+    "year": 2010,
+    "description": "King George VI overcomes a stutter with the help of an unconventional speech therapist during World War II.",
+    "id": "The%20King%E2%80%99s%20Speech"
+  },
+  {
+    "title": "The Hurt Locker",
+    "year": 2009,
+    "description": "A bomb disposal team in Iraq faces the dangers of disarming explosives during the height of the war.",
+    "id": "The%20Hurt%20Locker"
+  },
+  {
+    "title": "Slumdog Millionaire",
+    "year": 2008,
+    "description": "A poor young man from Mumbai recounts his life story while competing on the Indian version of “Who Wants to Be a Millionaire?”",
+    "id": "Slumdog%20Millionaire"
+  },
+  {
+    "title": "No Country for Old Men",
+    "year": 2007,
+    "description": "A hunter’s discovery of a drug deal gone wrong sets off a deadly pursuit by a remorseless killer.",
+    "id": "No%20Country%20for%20Old%20Men"
+  },
+  {
+    "title": "The Departed",
+    "year": 2006,
+    "description": "An undercover cop and a mole in the police force battle to identify each other while working for opposing sides in Boston’s crime world.",
+    "id": "The%20Departed"
+  },
+  {
+    "title": "Crash",
+    "year": 2005,
+    "description": "A series of interconnected stories explore race, class, and prejudice in Los Angeles.",
+    "id": "Crash"
+  },
+  {
+    "title": "Million Dollar Baby",
+    "year": 2004,
+    "description": "A determined woman trains to become a professional boxer under the guidance of a grizzled trainer.",
+    "id": "Million%20Dollar%20Baby"
+  },
+  {
+    "title": "The Lord of the Rings: The Return of the King",
+    "year": 2003,
+    "description": "The epic final battle for Middle-earth unfolds as Frodo and Sam reach Mount Doom to destroy the One Ring.",
+    "id": "The%20Lord%20of%20the%20Rings:%20The%20Return%20of%20the%20King"
+  },
+  {
+    "title": "Chicago",
+    "year": 2002,
+    "description": "Two murderesses compete for fame and freedom in 1920s Chicago through dazzling song-and-dance performances.",
+    "id": "Chicago"
+  },
+  {
+    "title": "A Beautiful Mind",
+    "year": 2001,
+    "description": "The true story of a brilliant mathematician who battles schizophrenia while making groundbreaking discoveries.",
+    "id": "A%20Beautiful%20Mind"
+  },
+  {
+    "title": "Gladiator",
+    "year": 2000,
+    "description": "A Roman general seeks revenge against the emperor who betrayed him and killed his family, rising as a gladiator.",
+    "id": "Gladiator"
+  },
+  {
+    "title": "American Beauty",
+    "year": 1999,
+    "description": "A suburban father experiences a midlife crisis while becoming infatuated with his daughter’s friend.",
+    "id": "American%20Beauty"
+  },
+  {
+    "title": "Shakespeare in Love",
+    "year": 1998,
+    "description": "William Shakespeare finds inspiration for “Romeo and Juliet” through a forbidden romance with a noblewoman.",
+    "id": "Shakespeare%20in%20Love"
+  },
+  {
+    "title": "Titanic",
+    "year": 1997,
+    "description": "A wealthy young woman and a poor artist fall in love aboard the doomed RMS Titanic.",
+    "id": "Titanic"
+  },
+  {
+    "title": "The English Patient",
+    "year": 1996,
+    "description": "A nurse tends to a gravely injured man in a remote Italian villa during World War II, learning of his tragic past.",
+    "id": "The%20English%20Patient"
+  },
+  {
+    "title": "Braveheart",
+    "year": 1995,
+    "description": "Scottish warrior William Wallace leads a rebellion against English rule during the 13th century.",
+    "id": "Braveheart"
+  },
+  {
+    "title": "Forrest Gump",
+    "year": 1994,
+    "description": "A simple man with a kind heart witnesses and unwittingly influences major events in American history.",
+    "id": "Forrest%20Gump"
+  },
+  {
+    "title": "Schindler’s List",
+    "year": 1993,
+    "description": "The true story of Oskar Schindler, a businessman who saved over a thousand Jews during the Holocaust.",
+    "id": "Schindler%E2%80%99s%20List"
+  },
+  {
+    "title": "Unforgiven",
+    "year": 1992,
+    "description": "A retired gunslinger is drawn back into a life of violence for one last job in the Old West.",
+    "id": "Unforgiven"
+  },
+  {
+    "title": "The Silence of the Lambs",
+    "year": 1991,
+    "description": "A young FBI agent seeks the help of a brilliant but psychopathic killer to catch another serial murderer.",
+    "id": "The%20Silence%20of%20the%20Lambs"
+  },
+  {
+    "title": "Dances with Wolves",
+    "year": 1990,
+    "description": "A Civil War soldier befriends a Sioux tribe while stationed in the American frontier.",
+    "id": "Dances%20with%20Wolves"
+  },
+  {
+    "title": "Driving Miss Daisy",
+    "year": 1989,
+    "description": "The relationship between a stubborn Southern widow and her African-American chauffeur evolves over decades.",
+    "id": "Driving%20Miss%20Daisy"
+  },
+  {
+    "title": "Rain Man",
+    "year": 1988,
+    "description": "A selfish man discovers his estranged brother, an autistic savant, and takes him on a cross-country trip.",
+    "id": "Rain%20Man"
+  },
+  {
+    "title": "The Last Emperor",
+    "year": 1987,
+    "description": "The story of Puyi, the last Emperor of China, from his childhood to his forced abdication and eventual imprisonment.",
+    "id": "The%20Last%20Emperor"
+  },
+  {
+    "title": "Platoon",
+    "year": 1986,
+    "description": "A young soldier faces the horrors of war and moral dilemmas while fighting in Vietnam.",
+    "id": "Platoon"
+  },
+  {
+    "title": "Out of Africa",
+    "year": 1985,
+    "description": "A Danish baroness and plantation owner reflects on her time living in Kenya during the early 20th century.",
+    "id": "Out%20of%20Africa"
+  },
+  {
+    "title": "Amadeus",
+    "year": 1984,
+    "description": "The life and rivalry between composers Wolfgang Amadeus Mozart and Antonio Salieri is explored in this period drama.",
+    "id": "Amadeus"
+  },
+  {
+    "title": "Terms of Endearment",
+    "year": 1983,
+    "description": "A mother and daughter navigate the complexities of love, family, and personal growth over several decades.",
+    "id": "Terms%20of%20Endearment"
+  },
+  {
+    "title": "Gandhi",
+    "year": 1982,
+    "description": "The life of Mahatma Gandhi, who led India to independence through nonviolent resistance, is depicted.",
+    "id": "Gandhi"
+  },
+  {
+    "title": "Chariots of Fire",
+    "year": 1981,
+    "description": "Two British athletes, one Jewish and one Christian, compete in the 1924 Olympics for very different reasons.",
+    "id": "Chariots%20of%20Fire"
+  },
+  {
+    "title": "Ordinary People",
+    "year": 1980,
+    "description": "A family unravels after the death of a son, struggling with grief, guilt, and emotional isolation.",
+    "id": "Ordinary%20People"
+  },
+  {
+    "title": "Kramer vs. Kramer",
+    "year": 1979,
+    "description": "A father and mother battle for custody of their young son, challenging traditional gender roles and family dynamics.",
+    "id": "Kramer%20vs.%20Kramer"
+  },
+  {
+    "title": "The Deer Hunter",
+    "year": 1978,
+    "description": "A group of friends from a small town is forever changed by their experiences fighting in the Vietnam War.",
+    "id": "The%20Deer%20Hunter"
+  },
+  {
+    "title": "Annie Hall",
+    "year": 1977,
+    "description": "A neurotic comedian reflects on his relationship with a quirky aspiring singer in New York City.",
+    "id": "Annie%20Hall"
+  },
+  {
+    "title": "Rocky",
+    "year": 1976,
+    "description": "A small-time boxer gets a chance at the world heavyweight championship, rising against all odds.",
+    "id": "Rocky"
+  },
+  {
+    "title": "One Flew Over the Cuckoo’s Nest",
+    "year": 1975,
+    "description": "A criminal fakes insanity to serve his sentence in a mental institution, where he leads a rebellion against the oppressive staff.",
+    "id": "One%20Flew%20Over%20the%20Cuckoo%E2%80%99s%20Nest"
+  },
+  {
+    "title": "The Godfather Part II",
+    "year": 1974,
+    "description": "The saga continues with the rise of young Vito Corleone and the expansion of Michael’s criminal empire.",
+    "id": "The%20Godfather%20Part%20II"
+  },
+  {
+    "title": "The Sting",
+    "year": 1973,
+    "description": "Two con men set out to avenge their friend’s murder by executing an elaborate and dangerous scam.",
+    "id": "The%20Sting"
+  },
+  {
+    "title": "The Godfather",
+    "year": 1972,
+    "description": "The aging patriarch of an organized crime family hands control of his empire to his reluctant son.",
+    "id": "The%20Godfather"
+  },
+  {
+    "title": "The French Connection",
+    "year": 1971,
+    "description": "A gritty New York cop obsessively pursues a wealthy drug lord in an intense and thrilling manhunt.",
+    "id": "The%20French%20Connection"
+  },
+  {
+    "title": "Patton",
+    "year": 1970,
+    "description": "The story of General George S. Patton, his controversial career, and leadership during World War II.",
+    "id": "Patton"
+  },
+  {
+    "title": "Midnight Cowboy",
+    "year": 1969,
+    "description": "A naïve Texan moves to New York City, dreaming of wealth but instead finding an unlikely friendship with a sickly hustler.",
+    "id": "Midnight%20Cowboy"
+  },
+  {
+    "title": "Oliver!",
+    "year": 1968,
+    "description": "A young orphan boy navigates the underworld of Victorian London in this musical adaptation of Charles Dickens’ “Oliver Twist.”",
+    "id": "Oliver!"
+  },
+  {
+    "title": "In the Heat of the Night",
+    "year": 1967,
+    "description": "A black detective from Philadelphia teams up with a white Southern police chief to solve a murder in a racially tense town.",
+    "id": "In%20the%20Heat%20of%20the%20Night"
+  },
+  {
+    "title": "A Man for All Seasons",
+    "year": 1966,
+    "description": "The life of Sir Thomas More, who stood up to King Henry VIII when the king rejected the Roman Catholic Church.",
+    "id": "A%20Man%20for%20All%20Seasons"
+  },
+  {
+    "title": "The Sound of Music",
+    "year": 1965,
+    "description": "A nun becomes the governess of a widower’s seven children and brings love and music into their lives, set against the backdrop of Nazi occupation.",
+    "id": "The%20Sound%20of%20Music"
+  },
+  {
+    "title": "My Fair Lady",
+    "year": 1964,
+    "description": "A phonetics professor transforms a Cockney flower girl into a refined lady, leading to unexpected consequences.",
+    "id": "My%20Fair%20Lady"
+  },
+  {
+    "title": "Tom Jones",
+    "year": 1963,
+    "description": "The romantic and comedic adventures of a foundling as he navigates love, society, and fortune in 18th-century England.",
+    "id": "Tom%20Jones"
+  }
+]
