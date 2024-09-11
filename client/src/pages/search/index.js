@@ -1,16 +1,38 @@
 import Card from "../../components/Card/"
+import { useEffect, useMemo, useState } from 'react'
+import { Container, Row, Col } from "react-bootstrap"
+import MovieBlock from '../../components/MovieBlock/'
 
 export default function SearchPage() {
-    const props2pass = {
-        header: "Search for a Movie",
-        footer: "---"
-    }
+
+    const [movies, setMovies] = useState(null)
+
+    useEffect(() => {
+        fetch('/api/search')
+            .then(r => r.json())
+            .then(r => setMovies(r.data))
+    }, [])
+
+    const props2pass = useMemo(() => {
+        return {
+            header: "Search for a Movie",
+            footer: "---",
+        }
+    }, [])
+
     return (
-        <Card {...props2pass} className="search-card">
-            <div>
-                <h1 style={{color: 'white'}}>Page Still under Development</h1>
-                <a href="/" style={{color: "var(--primaryText"}} className="mt-5 fs-3">Return Home</a>
-            </div>
-        </Card>
+        <Container style={{ overflowY: "auto", marginTop: "50px", marginBottom: "50px" }}>
+            <Row>
+                <Col xs={12}>
+                    <Card {...props2pass} className="search-card">
+                        <div>
+                            {movies && Array.isArray(movies)
+                                ? movies.map((el, i) => <MovieBlock key={i} {...el}></MovieBlock>)
+                                : 0}
+                        </div>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>
     )
 }

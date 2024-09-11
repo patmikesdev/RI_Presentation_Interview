@@ -35,10 +35,11 @@
   .Layout main{
     position: relative; 
     top: 9vh; 
-    min-height: 91vh;
+    height: 91vh;
     background: no-repeat center/contain url('landingBG.png'); 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }

@@ -1,0 +1,12 @@
+.movieBlock .card-body{
+    background-color: var(--light);
+    color: var(--tertiary)
+}
+
+.movieBlock a{
+    color: var(--primaryText); 
+}
+
+.movieBlock a:hover{
+    color: var(--primary); 
+}

@@ -1,5 +1,5 @@
 import { Outlet } from "react-router"
-import { Container, Row } from "react-bootstrap"
+// import { Container, Row } from "react-bootstrap"
 import "./layout.css"
 import Navbar from "../Navbar/"
 
@@ -8,11 +8,7 @@ export default function Layout() {
         <div className="Layout">
             <Navbar></Navbar>
             <main>
-                <Container>
-                    <Row>
-                        <Outlet></Outlet>
-                    </Row>
-                </Container>
+                <Outlet></Outlet>
             </main>
         </div>
     )
