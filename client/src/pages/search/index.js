@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Container, Row, Col, Button} from "react-bootstrap"
+import { Container, Row, Col, Button } from "react-bootstrap"
 import Card from "../../components/Card/"
 import MovieBlock from '../../components/MovieBlock/'
 import MovieForm from '../../components/MovieForm/'
@@ -11,8 +11,8 @@ export default function SearchPage() {
     const backButton = useMemo(() => {
         return (
             <div className="d-flex justify-content-center my-2">
-            <Button className="fs-4" variant="outline-primary" onClick={()=>setSearchResult(null)}>New Search</Button>
-        </div>
+                <Button className="fs-4" variant="outline-primary" onClick={() => setSearchResult(null)}>New Search</Button>
+            </div>
         )
     }, [])
 
@@ -51,11 +51,13 @@ export default function SearchPage() {
                                     </>
                                     : <Card {...searchFormCardProps}>
                                         <MovieForm id="searchForm" route="/api/search" setSearchResult={setSearchResult}></MovieForm>
-                                      </Card>
+                                    </Card>
                             }
-                            {movies && Array.isArray(movies)
-                                ? movies.map((el, i) => <MovieBlock key={i} {...el}></MovieBlock>)
-                                : 0}
+                            {
+                                movies && Array.isArray(movies)
+                                    ? movies.map((el, i) => <MovieBlock key={i} {...el}></MovieBlock>)
+                                    : null
+                            }
                         </div>
                     </Card>
                 </Col>

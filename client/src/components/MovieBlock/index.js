@@ -4,11 +4,11 @@ import "./styles.css"
 
 const { Header, Body, Footer } = Card
 
-export default function MovieBlock({ title, year, description, id, footer='❖'}) {
+export default function MovieBlock({ title="", year="", description="", id="", footer='❖'}) {
     return (
         <Card className="movieBlock mb-5">
             <Header>
-                <Link to="/">
+                <Link to={`/`}>
                     <h3>{title}</h3>
                 </Link>
             </Header>

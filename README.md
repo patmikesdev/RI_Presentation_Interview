@@ -51,7 +51,13 @@
     
             $ npm start
 
-# 1: Routing with React Router
+  - This last command should have automatically opened your browser and pointed it the address for the development server. The app should look like this: 
+
+  ![Screenshot of Home Landing Page](./Dox/HomeScreen.png "Landing Page")
+
+----
+
+# 1: - Routing with React Router
 ### (A): <u>Pull up the file for App.js, which can be found at</u>
 [Click here to pull up App Component](./client/src/base/App.js)
 ```
@@ -127,7 +133,7 @@ export default function Layout() {
   - Once you're done, test it out in the app by trying to navigate to some random, misnamed page, see if your new component renders correctly
 
 
-# 2: Reusability
+# 2: - Reusability
 
  - I've said it before, and I'll say it again; making reusable components is the name of the game in react. It's ability to streamline the development process can be a game changer, particularly when you have a tight deadline you need to meet (which will basically be alwuays in the professional world.)
  - One of the most common elements that can really benefit from reusability are Cards. I've ended up using them all over most of my applications, and you can see them used over and over in this application. 
@@ -238,7 +244,7 @@ export default function Landing() {
   - This hook returns a function that you can invoke (such as on the click of a button, as I did here) to trigger a navigation similar to clicking on a link. 
   - What is an alternative component from react-router I could use to achieve this same effect? 
 
-# 3: Working with data in React
+# 3: - Working with data in React
 ### (A): <u>Take a look at our example dataset</u>
 [Click here to pull up our data in JSON format](./server/database/seed/backups/movieData.json)
 ```
@@ -268,6 +274,46 @@ export default function Landing() {
 ```
 ./client/src/pages/search/index.js
 ```
+  - First, lets see how we're fetching the data from our server to populate this page with all the entries. 
+  ```js
+      const [movies, setMovies] = useState(null)
+      //...
+      //...
+      useEffect(() => {
+        fetch('/api/search')
+            .then(r => r.json())
+            .then(r => setMovies(r.data))
+    }, [])
+  ```
+    - ? Who can tell me what the useEffect hook here is doing? When does it do it? What does the empty array have to do with anything?
+  - Next, assuming we've succesfully fetched all the movie documents from our DB, how are we going to display them? Since there's many of them, this sounds like a great use case for another reusable component. Let's call it `MovieBlock`
+  
+[Click here to pull up MovieBlock Component](./client/src/components/MovieBlock/index.js)
+```
+./client/src/components/MovieBlock/index.js
+```
+  - So we want to take our array of movie documents, and use them to render a bunch of these `<MovieBlock>` components. 
+  - ? 
+    - What technique should we use to do this directly in the JSX? 
+    - Are there any common gotchas we need to watch out for when using this technique?
+    - What should we do about the fact that our dataset might not be available right when the page first loads? 
+
+  - How about we do something like the following block of code
+  ```js
+        {
+          movies && Array.isArray(movies)
+            ? movies.map((el, i) => <MovieBlock key={i} {...el}></MovieBlock>)
+            : null
+        }
+  ```
+  - Use the Array.map method to iterate over an array, and use each array element to render a JSX element
+  - When mapping in JSX, <u>*be sure not to forget that each JSX element needs a unique key value!*</u>
+  - We can use a ternary expression (`boolean ? (val if true) : (val if false)`) to only perform the mapping once our movies state has been defined, and movies is in fact an Array. Otherwise, the whole expression evalutes to null, which doesn't render anything in JSX. 
+  - If everything goes right, we should end up with this
+
+![Example of MovieBlock from Search Page](./Dox/MovieBlock.png "MovieBlock Example")
+
+
 
 
 
