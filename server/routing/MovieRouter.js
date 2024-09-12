@@ -1,23 +1,20 @@
 import MovieController from '../controllers/movie_controller.js'
 import {Router} from 'express'
 
-const {getOne, getMany, getOneBYID} = MovieController; 
+const {getOne, getMany, getOneByID} = MovieController; 
 const MovieRouter = Router();
 
+//ROUTING STILL NEEDS TO IMPLEMENTED FOR FULL EDITING, AND SUBMITTING FUNCTIONALITY
 
 MovieRouter
-.route('/search/:id')
-.get(getOne)
+    .route("/edit/:id")
+        .get(getOneByID)
 
 MovieRouter
     .route('/search')
         .get(getMany)
         .post(getOne)
 
-// MovieRouter
-//     .route('/submit')
-//         .post(createOne)
-//make some changes
 
 export default MovieRouter
 

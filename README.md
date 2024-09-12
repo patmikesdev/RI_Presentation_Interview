@@ -313,6 +313,26 @@ export default function Landing() {
 
 ![Example of MovieBlock from Search Page](./Dox/MovieBlock.png "MovieBlock Example")
 
+[Click here to visit the search page in the browser](http://localhost:3000/search)
+
+---
+# 🛠️ Exercise
+- If you scroll down a bit on the search page and try clicking on any of the links in the headers, you'll notice all any of them do is take us back to the home page. 
+- Instead, lets make it to where clicking that link in each MovieBlock takes us to a page dedicated to editing that movie. 
+- Let's do it using a `route parameter` that relies on the `_id` of each movie. (Note, each movie also has an `id` field, but this is different. We're going to use `_id` because it allows mongoDB to quickly find an individual movie for us, using the automatic DB index on that field. )
+
+1. First, let's make sure our back end is set up correctly to handle requests to go to a particular edit page. 
+ - We have our api routing modularized from the main server.js file with this line of code. <u>*Note*</u> all api requests a prefixed with `/api`
+ ```js
+ app.use('/api', MovieRouter) 
+ ```
+ - In the [Movie Router File](./server/routing/MovieRouter.js), `./server/routing/MovieRouter.js`, where is the routing for the edit page? 
+
+
+1. Go back to the `<MovieBlock>` Component [Here](./client/src/components/MovieBlock/index.js)
+  - Where is the link functionality implemented, and how can we fix it using the parameters provided?
+
+
 
 
 

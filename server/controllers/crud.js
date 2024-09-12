@@ -70,5 +70,5 @@ export const crudControllers = model => ({
   // createOne: createOne(model)
   getMany: getMany(model),
   getOne: getOne(model),
-  getOneByID: getOne(model),
+  getOneByID: getOneByID(model),
 })
