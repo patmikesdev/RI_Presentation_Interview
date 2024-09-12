@@ -7,11 +7,12 @@ import { useEffect, useState, useMemo } from 'react'
 export default function EditPage() {
     const { id } = useParams();
 
-    // eslint-disable-next-line 
     const [movie, setMovie] = useState(null)
 
     useEffect(() => {
-        //make request to backend api for movie data, using route param
+        fetch(`/api/edit/${id}`)
+            .then(r => r.json())
+            .then(r => setMovie(r.data))
     }, [id])
 
     const EditCardProps = useMemo(() => {
@@ -29,13 +30,11 @@ export default function EditPage() {
                     {
                         movie
                             ? <Card {...EditCardProps}>
-                                {/*What other props need to be added to fill in this form correctly*/}
-                                {/*Hint, look at the MovieForm function definition*/}
-                                <MovieForm id="editForm" route="/api/edit/:id" method="POST" ></MovieForm>
+                                <MovieForm id="searchForm" route="/api/search" initialValues={movie}></MovieForm>
                             </Card>
                             : <Card header={"No Movie selected!"} footer='??' className="search-card">
                                 <div>
-                                    <h1 style={{ color: 'white' }}>You didn't pick a movie to edit!</h1>
+                                    <h1 style={{ color: 'white' }}>Page Still under Development</h1>
                                     <a href="/" style={{ color: "var(--primaryText" }} className="mt-5 fs-3">Return Home</a>
                                 </div>
                             </Card>

@@ -326,11 +326,28 @@ export default function Landing() {
  ```js
  app.use('/api', MovieRouter) 
  ```
- - In the [Movie Router File](./server/routing/MovieRouter.js), `./server/routing/MovieRouter.js`, where is the routing for the edit page? 
+ - In the [Movie Router File](./server/routing/MovieRouter.js), `./server/routing/MovieRouter.js`, where is the routing to get the initial data for the edit page? 
+ ```js
+ MovieRouter
+    .route("/edit/:id")
+        .get(getOneByID)
+ ```
+ - So we know, to get the data for a specific movie loaded into the edit page, we need to send a `GET` request to `/api/edit/(insert movie id here)`
 
 
-1. Go back to the `<MovieBlock>` Component [Here](./client/src/components/MovieBlock/index.js)
+2. Go back to the `<MovieBlock>` Component [Here](./client/src/components/MovieBlock/index.js)
   - Where is the link functionality implemented, and how can we fix it using the parameters provided?
+  - How can we send the piecce of data (the id for the movie) from the search page to the edit page? Let's use a route parameter
+  - Change the `<Link>` tag in `<MovieBlock>` so that it takes the user to the correct page
+  - When you're done, it should look like the following
+  ```html
+<Link to={`/edit/${_id}`}>
+        <h3>{title}</h3>
+</Link>
+```
+
+3. Now go the [Edit Page Component](./client/src/pages/edit/index.js). 
+ - 
 
 
 
