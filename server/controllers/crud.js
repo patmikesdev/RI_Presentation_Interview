@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const genID = mongoose.Types.ObjectId
 //Generic CRUD controllers
 
-export const getOne = model => async (req, res) => {
+export const getOneByID = model => async (req, res) => {
   let query = model.findOne({ _id: req.params.id });
   query
     .then(result => {
@@ -20,17 +20,42 @@ export const getOne = model => async (req, res) => {
     })
 }
 
-export const getMany = model => async (req, res) => {
-  if (req.query.title) req.query.title = req.query.title.toLowerCase();
-  model.find(req.query).lean() //lean query returns plain JS object, not wrapped as Mongoose Document
+export const getOne = model => async (req, res) => {
+  //make sure no empty strings are getting passed as part of query; 
+  !req.body.title && delete req.body.title; 
+  !req.body.year && delete req.body.year; 
+  !req.body.description && delete req.body.description; 
+  model.findOne(req.body).lean() //lean query returns plain JS object, not wrapped as Mongoose Document
     .then(result => {
       if (result) {
         res.status(200).json({ data: result })
       }
+      else{
+        res.status(404).json({ data: `Could not find movie matching query: ${JSON.stringify(req.body)}`})
+      }
     })
     .catch(err => {
-      if (err === '404') res.status(404).json({ data: `Could not find movie matching query: ${JSON.stringify(req.query)}`})
-      else res.status(500).json({ data: `Error in trying to retrieve results for query ${JSON.stringify(req.query)}:\n ${err}` })
+      res.status(500).json({ data: `Error in trying to retrieve results for query ${JSON.stringify(req.body)}:\n ${err}` })
+  })
+}
+
+export const getMany = model => async (req, res) => {
+  //make sure no empty strings are getting passed as part of query; 
+  !req.body.title && delete req.body.title; 
+  !req.body.year && delete req.body.year; 
+  !req.body.description && delete req.body.description; 
+  model.find(req.body).lean() //lean query returns plain JS object, not wrapped as Mongoose Document
+    .then(result => {
+      // if nothing found, returns an empty array, not a 404 error
+      if (result.length > 0) {
+        res.status(200).json({ data: result })
+      }
+      else{
+        res.status(404).json({ data: `Could not find movie matching query: ${JSON.stringify(req.body)}`})
+      }
+    })
+    .catch(err => {
+      res.status(500).json({ data: `Error in trying to retrieve results for query ${JSON.stringify(req.body)}:\n ${err}` })
   })
 }
 
@@ -112,5 +137,6 @@ export const crudControllers = model => ({
   // updateOne: updateOne(model),
   getMany: getMany(model),
   getOne: getOne(model),
+  getOneByID: getOne(model),
   createOne: createOne(model)
 })

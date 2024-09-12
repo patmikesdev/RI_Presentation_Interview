@@ -4,7 +4,7 @@ import "./styles.css"
 
 const { Header, Body, Footer } = Card
 
-export default function MovieBlock({ title, year, description, id }) {
+export default function MovieBlock({ title, year, description, id, footer='❖'}) {
     return (
         <Card className="movieBlock mb-5">
             <Header>
@@ -16,7 +16,7 @@ export default function MovieBlock({ title, year, description, id }) {
                 <p>{description}</p>
                 <p className="text-end fst-italic">-{year}</p>
             </Body>
-            <Footer className="fs-2">something</Footer>
+            <Footer className="fs-2">{footer}</Footer>
         </Card>
     )
 }

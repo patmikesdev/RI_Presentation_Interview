@@ -1,7 +1,7 @@
 import MovieController from '../controllers/movie_controller.js'
 import {Router} from 'express'
 
-const {getOne, getMany, createOne} = MovieController; 
+const {getOne, getMany, createOne, getOneBYID} = MovieController; 
 const MovieRouter = Router();
 
 
@@ -14,6 +14,7 @@ MovieRouter
 MovieRouter
     .route('/search')
         .get(getMany)
+        .post(getOne)
 
 MovieRouter
     .route('/submit')
