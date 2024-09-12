@@ -2,6 +2,7 @@ import Card from "../../components/Card/"
 import { useEffect, useMemo, useState } from 'react'
 import { Container, Row, Col } from "react-bootstrap"
 import MovieBlock from '../../components/MovieBlock/'
+import MovieForm from '../../components/MovieForm/'
 
 export default function SearchPage() {
 
@@ -26,6 +27,7 @@ export default function SearchPage() {
                 <Col xs={12}>
                     <Card {...props2pass} className="search-card">
                         <div>
+                            <MovieForm></MovieForm>
                             {movies && Array.isArray(movies)
                                 ? movies.map((el, i) => <MovieBlock key={i} {...el}></MovieBlock>)
                                 : 0}

@@ -4,7 +4,7 @@
 }
 
 .movieBlock a{
-    color: var(--primaryText); 
+    color: var(--primaryText) !important; 
 }
 
 .movieBlock a:hover{

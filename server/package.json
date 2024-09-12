@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=development node index.js",
-    "launchMongod": "mongod --dbpath ./database/mongo",
+    "launchMongo": "mongod --dbpath /usr/local/var/mongodb",
+    "launchMongod2": "mongod --dbpath ./database/mongo",
     "seed": "node ./database/seed/scripts/restore.js",
     "backup": "node ./database/seed/scripts/backup.js",
     "importDBfromJSON": "node ./database/seed/scripts/importJSON.js"
