@@ -147,10 +147,9 @@ import "./cardStyle.css"
 
 const { Header, Body, Footer } = Card 
 
-export default function CustomCard({header="header", footer="footer", style=null, classes='', children=null}) { //note default parameters
+export default function CustomCard({header="header", footer="footer", style=null, classes='', children=null}) {
     return (
-
-            <Card style={{...style}} className={classes}>
+            <Card style={{...style}} className={`default-card-class ${classes}`}>
                 <Header className="fs-2" style={{position: 'sticky', top: 0, zIndex:5}}>{header}</Header>
                 <Body className="d-flex p-5" style={{zIndex: 0}}>{children}</Body>
                 <Footer className="fs-2" style={{zIndex: 0}}>{footer}</Footer>
@@ -181,8 +180,35 @@ export default function CustomCard({header="header", footer="footer", style=null
   }
   ```
    - However, especially in components where there are a many prop values, it can become tedious to have to preface every reference to one of them by saying props.p1, or props.whatever. 
-   - That's why we can destructure the individual properties 
+   - That's why we can destructure the individual properties directly in the function signature itself, like so
+```js
+  export default function MyComponent({p1, p2}){
+        // Now in here, we can simply refer directly to the 'parameters' p1 and p2, without having to access them through the props parameter first
+  }
+  ```
+  - Back to the Card Example, We've destructured 5 parameters out the single props object
+   1. header
+   2. footer
+   3. style
+   4. classes
+   5. children (special property, will talk about below)
+  - header and footer are simply whatever we want to render inside the Card `<Header>` and `<Footer>` tags. Often times these will just be strings, but they could also be JSX elements themselves, such as `<Button>`s, `<div>`s, etc. 
+  - Passing a <u>style</u> object is another really easy way to make a reusable element customizable. We can have whatever general default styles we want every card to have defined in a separate css file (such as `./cardStyle.css`). But passing a style object and spreading it as the value to the Underlying elements style attribute like this is a really easy way to allow yourself to specify additional styles or even override the default styles on demand
+  ```js
+  <Card style={...style}>
+  ```
+  - Passing <u>classes</u> as a prop value is also another easy way to add a layer of customization. Here is a method that allows you both to specify some default classes, like `default-card-class` but also add your own, using string literal interpolation. One important caveat to note with this approach is that it's important to give classes a default argument value, typically of an empty string. Otherwise, if it's undefined, 'undefined' is going to show up as an unintended class added to the Card. 
+  ```js
+  <Card className={`default-card-class ${classes}`}>
+  ```
+  - Last but not least, the <u>children</u> prop. Unlike the other prop values, this one is <u>*NOT*</u> passed like an attribute in between the `<>` tags. Rather, any JSX elements that are passed as descendants in between the opening and closing component tags get gathered up and passed as a single value `children`. Note, this is also why you can't specify multiple siblings as direct descendants to a component, but need to wrap them inside of a `<></>` fragment tag.
+  - This is the easiest way to customize, typically the main content of your component. However, it can only be used once in the component, so here I've used it to display whatever body element I want. 
 
+### (B): <u>Pull up the file for the Landing Page component</u>
+[Click here to pull up Landing Page Component](./client/src/pages/landing/index.js)
+```
+./client/src/pages/landing/index.js
+```
 
 
 
