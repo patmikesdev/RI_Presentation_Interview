@@ -51,3 +51,27 @@
     
             $ npm start
 
+# Routing with React Router
+1 Pull up the file for App.js, which can be found at 
+```
+./client/src/base/App.js
+```
+```js
+export default function App() {
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}> 
+            <Route path="/" element={<Landing />}></Route>
+            <Route path="/search" element={<Search />}></Route>
+            <Route path="/submit" element={<Submit />}></Route>
+            <Route path="/edit/:id" element={<Edit />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
+```
+- Here you can see the Route tree for the entire application. Another way to think of this is like a site-map. 

@@ -73,10 +73,10 @@ function gracefulShutdown(signal) {
     }
     shuttingDown = true; 
     console.log(''); //starts printing on new line; 
+    if (signal === 'SIGUSR2') logger(`${chalk.hex('#ffd700').bold('Nodemon restart triggered for')} ${chalk.green.bold('Express Server')}`); 
     logger(`${chalk.green.bold('Shutting Down Express Server')}`)
     disconnect()
     .then(() => {
-        if (signal === 'SIGUSR2') logger(`${chalk.hex('#ffd700').bold('Nodemon restart triggered for')} ${chalk.yellow.bold('UI Server')}`); 
         process.removeAllListeners()
         logger(`${chalk.green.bold('Express Server Shutdown complete')}`)
         queueMicrotask(process.exit)

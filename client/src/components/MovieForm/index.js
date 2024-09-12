@@ -16,14 +16,16 @@ export default function MovieForm({ id, route, initialValues = {}, method = "POS
         e.preventDefault();
         let options = null;
         if (method === "POST" || method === "PUT") {
+            //need to make sure I don't pass any fields with values of empty string to query, messes up search
+            let body = {}; 
+            if(titleProps.value) body.title = titleProps.value; 
+            if(yearProps.value) body.year = yearProps.value; 
+            if(descriptionProps.value) body.description = descriptionProps.value; 
+            //options passed with fetch request
             options = {
                 method,
                 headers: new Headers({ 'Content-Type': 'application/json' }),
-                body: JSON.stringify({
-                    title: titleProps.value,
-                    year: yearProps.value,
-                    description: descriptionProps.value,
-                })
+                body: JSON.stringify(body)
             }
         }
         fetch(route, options)

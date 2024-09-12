@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=development node index.js",
+    "start": "NODE_ENV=development nodemon -q --config config/nodemon.json index.js",
     "launchMongo": "mongod --dbpath /usr/local/var/mongodb",
     "launchMongod2": "mongod --dbpath ./database/mongo",
     "seed": "node ./database/seed/scripts/restore.js",
