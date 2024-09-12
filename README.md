@@ -2,7 +2,7 @@
 
 - ### To view rendered markdown in VSC, press shift cmd v 
 
-## Initial Set Up Instructions
+## ❖ Initial Set Up Instructions
 - ### To start the mongod server, in separate terminal window (a window that you can leave open for the duration during which you want the database to be accessible), enter the command
 
         $ mongod --dbpath /usr/local/var/mongodb
@@ -52,7 +52,8 @@
             $ npm start
 
 # 1: Routing with React Router
-### (A): <u>Pull up the file for App.js, which can be found at</u> 
+### (A): <u>Pull up the file for App.js, which can be found at</u>
+[Click here to pull up App Component](./client/src/base/App.js)
 ```
 ./client/src/base/App.js
 ```
@@ -85,6 +86,7 @@ export default function App() {
 - Let's head over the this Layout component and check it out. 
 
 ### (B): <u>Pull up the file for the Layout component, which can be found at </u>
+[Click here to pull up Layout Component](./client/src/components/Layout/index.js)
 ```
 ./client/src/components/Layout/index.js
 ```
@@ -122,6 +124,81 @@ export default function Layout() {
 #### <u>Bonus Exercise</u>
   - What happens though in our application if somebody tries to visit a URL for which there is no match? We need to implement a generic, catch-all route that will display a nice message gently telling our user they're lost, and helping them back to the home page. 
     - (Hint) what symbol is often used, for instance in RegExps or glob patterns, when we want to specify a character/characters that matches anything? You may have also heard it called a wildcard symbol. Where would you use this in a `<Route>` component? 
+  - Once you're done, test it out in the app by trying to navigate to some random, misnamed page, see if your new component renders correctly
 
-# Reusability
+
+# 2: Reusability
+
+ - I've said it before, and I'll say it again; making reusable components is the name of the game in react. It's ability to streamline the development process can be a game changer, particularly when you have a tight deadline you need to meet (which will basically be alwuays in the professional world.)
+ - One of the most common elements that can really benefit from reusability are Cards. I've ended up using them all over most of my applications, and you can see them used over and over in this application. 
+ - Reusability can be a double-edged sword however.
+   - You want to make your reusable components able to customized, to take in specific content for instance. 
+   - However, it can be easy to fall into the trap of making a single component overly complex in order to accomodate many different use cases, when you might actually be better served simply making a separate component. 
+ - It's a balancing act, but here are some tips on some simple ways to make your components BOTH <u>*reusable*</u> and <u>*customizable*</u>
+ 
+  ### (A): <u>Pull up the file for the Card component</u>
+[Click here to pull up Card Component](./client/src/components/Card/index.js)
+```
+./client/src/components/Card/index.js
+```
+```js
+import { Card } from "react-bootstrap"
+import "./cardStyle.css"
+
+const { Header, Body, Footer } = Card 
+
+export default function CustomCard({header="header", footer="footer", style=null, classes='', children=null}) { //note default parameters
+    return (
+
+            <Card style={{...style}} className={classes}>
+                <Header className="fs-2" style={{position: 'sticky', top: 0, zIndex:5}}>{header}</Header>
+                <Body className="d-flex p-5" style={{zIndex: 0}}>{children}</Body>
+                <Footer className="fs-2" style={{zIndex: 0}}>{footer}</Footer>
+            </Card>
+
+    )
+}
+```
+ - First, look at the very top import. We're using a Card component from react-bootstrap, so it already has a lot of helpful pre-defined styles for us to use as a base. 
+ - Can anyone describe to me what this line here is doing? What is it called, and why is it here?  
+ ```js 
+ const { Header, Body, Footer } = Card 
+ ```
+ - Look at the function signature. What is the set of {} braces doing inside there? `function CustomCard({ --- })`
+  - Answer: All react function components really only receive a single argument, most often called <u>*props*</u>. However, we almost always need more than one value to create our component. So props is an object, and its property names are the attribute names that were passed via the JSX used to render the component. 
+  - For instance, 
+  ```jsx
+  <MyComponent p1={'someString'} p2={42}></MyComponent>
+  ```  
+   - if MyComponent has a signature that looks like this
+  ```js
+  export default function MyComponent(props){
+        // in here, props is an object that for this rendering, was passed these two properties
+        // {
+        //   p1: 'someString',
+        //   p2: 42
+        // }
+  }
+  ```
+   - However, especially in components where there are a many prop values, it can become tedious to have to preface every reference to one of them by saying props.p1, or props.whatever. 
+   - That's why we can destructure the individual properties 
+
+
+
+
+
+
+ <!-- ### (A): <u>Pull up the files for the Landing Page and Card components</u>
+  - Note, to keep both of these open at once, after you open them, double click the tab along the top bar until the file name is no longer italicized. 
+  - These files can be found here: 
+
+[Click here to pull up Landing Page Component](./client/src/pages/landing/index.js)
+```
+./client/src/pages/landing/index.js
+``` -->
+
+
+
+
+
 

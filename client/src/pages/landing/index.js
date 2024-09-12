@@ -1,6 +1,6 @@
-import Card from "../../components/Card/"
 import { Button } from "react-bootstrap"
 import { useNavigate } from 'react-router-dom'
+import Card from "../../components/Card/"
 import useMemoDemonstration from "./memoDemonstrationHook"
 import "./landing.css"
 

@@ -1,6 +1,6 @@
-import Card from "../../components/Card/"
 import { useEffect, useMemo, useState } from 'react'
 import { Container, Row, Col, Button} from "react-bootstrap"
+import Card from "../../components/Card/"
 import MovieBlock from '../../components/MovieBlock/'
 import MovieForm from '../../components/MovieForm/'
 
@@ -51,7 +51,7 @@ export default function SearchPage() {
                                     </>
                                     : <Card {...searchFormCardProps}>
                                         <MovieForm id="searchForm" route="/api/search" setSearchResult={setSearchResult}></MovieForm>
-                                    </Card>
+                                      </Card>
                             }
                             {movies && Array.isArray(movies)
                                 ? movies.map((el, i) => <MovieBlock key={i} {...el}></MovieBlock>)
