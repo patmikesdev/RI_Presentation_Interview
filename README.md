@@ -51,8 +51,8 @@
     
             $ npm start
 
-# Routing with React Router
-1 Pull up the file for App.js, which can be found at 
+# 1: Routing with React Router
+### (A): <u>Pull up the file for App.js, which can be found at</u> 
 ```
 ./client/src/base/App.js
 ```
@@ -74,4 +74,54 @@ export default function App() {
   );
 }
 ```
-- Here you can see the Route tree for the entire application. Another way to think of this is like a site-map. 
+- Here you can see the Route tree for the entire application. Another way to think of this is like a site-map - it specifies all the different pages that are reachable through the app. 
+- One of these routes in particular is different from the others though.
+  - Which one is it?
+  - What makes it different?
+  - What does the different mean? 
+
+- If you said the `<Layout>` route, congratulations! It's different because <u>*it doesn't have any path attribute*</u>. This makes it what is creatively named as a <u>layout route</u> in React Router (not to be confused with the Layout component which the route renders)
+- In React Router, layout routes are used when you have some JSX that you'd like to be a parent to an entire set of routes. It saves you from having to repeat the same code for each individual page. It's named this because most commonly, the sort of thing it's used for is when you have a set of pages that you want to display nested within common HTML, and perhaps apply common styles and functionality. The layout route simply wraps all the nested routes in its element. 
+- Let's head over the this Layout component and check it out. 
+
+### (B): <u>Pull up the file for the Layout component, which can be found at </u>
+```
+./client/src/components/Layout/index.js
+```
+```js
+import { Outlet } from "react-router"
+import Navbar from "../Navbar/"
+import "./layout.css"
+
+export default function Layout() {
+    return (
+        <div className="Layout">
+            <Navbar></Navbar>
+            <main>
+                <Outlet></Outlet>
+            </main>
+        </div>
+    )
+}
+```
+- Does anyone see a component that might be important for making this a true layout route?
+
+- The `<Outlet></Outlet>` component!! 
+- What this Outlet component does is tell React Router to render, at this location in the entire DOM, whichever one of the `<Route>`s nested inside the layout `<Route>` (see above, `App.js`) correctly matched the url the visitor has navigated to. 
+- So for instance, if we visited `/search`, what the router renders would look like this
+```html
+<Lavout>
+   <Search></Search>
+</Layout>
+```
+- What would be the biggest benefit for structuring your code this way?
+
+
+- <u>*REUSABILITY*</u>. You can see in this example here, using the layout route allows me to apply both the common html elements I want present on every page (`<Navbar>` and `<main>`), and also to apply a set of common styles (`import './layout.css'`). I only need to do this once!
+
+#### <u>Bonus Exercise</u>
+  - What happens though in our application if somebody tries to visit a URL for which there is no match? We need to implement a generic, catch-all route that will display a nice message gently telling our user they're lost, and helping them back to the home page. 
+    - (Hint) what symbol is often used, for instance in RegExps or glob patterns, when we want to specify a character/characters that matches anything? You may have also heard it called a wildcard symbol. Where would you use this in a `<Route>` component? 
+
+# Reusability
+

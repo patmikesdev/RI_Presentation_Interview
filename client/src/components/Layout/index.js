@@ -1,7 +1,6 @@
 import { Outlet } from "react-router"
-// import { Container, Row } from "react-bootstrap"
-import "./layout.css"
 import Navbar from "../Navbar/"
+import "./layout.css"
 
 export default function Layout() {
     return (
