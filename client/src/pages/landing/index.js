@@ -1,7 +1,8 @@
 import { Button } from "react-bootstrap"
 import { useNavigate } from 'react-router-dom'
+import {useMemo} from 'react'
 import Card from "../../components/Card/"
-import useMemoDemonstration from "./memoDemonstrationHook"
+// import useMemoDemonstration from "./memoDemonstrationHook"
 import "./landing.css"
 
 export default function Landing() {
@@ -11,15 +12,17 @@ export default function Landing() {
     // see landing.css
     const navigate = useNavigate();
 
-    //custom hook created to demonstrate why useMemo is useful. 
-    const memoized_props = useMemoDemonstration(); 
-
-    //memoized_props is an object with properties like 
-    // {
-    //     header: "Welcome!",
-    //     footer: "Let's a go!",
-    //     classes: "landing-card"
-    // }
+    //often times, if I have a lot of props I'm trying to pass to a component, it can be neater to 
+    //specify them in their own object and spreading that rather than hardcoding them inline in the jsx. 
+    //see {...memoized_props}
+    //memoizing these props saves me from having them redeclared on every single render of this component
+    const memoized_props = useMemo(() => {
+        return {
+            header: "Welcome!",
+            footer: "Let's a go!",
+            classes: "landing-card"
+        }
+    }, [])
 
     return (
         <Card {...memoized_props} >
@@ -31,3 +34,14 @@ export default function Landing() {
         </Card>
     )
 }
+
+    //Code for demonstrating useMemo hook. Deferred for this Lesson
+    //custom hook created to demonstrate why useMemo is useful. 
+    //const memoized_props = useMemoDemonstration(); 
+
+    //memoized_props is an object with properties like 
+    // {
+    //     header: "Welcome!",
+    //     footer: "Let's a go!",
+    //     classes: "landing-card"
+    // }

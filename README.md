@@ -154,7 +154,6 @@ export default function CustomCard({header="header", footer="footer", style=null
                 <Body className="d-flex p-5" style={{zIndex: 0}}>{children}</Body>
                 <Footer className="fs-2" style={{zIndex: 0}}>{footer}</Footer>
             </Card>
-
     )
 }
 ```
@@ -209,20 +208,66 @@ export default function CustomCard({header="header", footer="footer", style=null
 ```
 ./client/src/pages/landing/index.js
 ```
+```js
+export default function Landing() {
+    const navigate = useNavigate();
 
+    const memoized_props = useMemo(() => {
+        return {
+            header: "Welcome!",
+            footer: "Let's a go!",
+            classes: "landing-card"
+        }
+    }, [])
 
-
-
-
- <!-- ### (A): <u>Pull up the files for the Landing Page and Card components</u>
-  - Note, to keep both of these open at once, after you open them, double click the tab along the top bar until the file name is no longer italicized. 
-  - These files can be found here: 
-
-[Click here to pull up Landing Page Component](./client/src/pages/landing/index.js)
+    return (
+        <Card {...memoized_props} >
+            <div className="d-flex justify-content-around landing-body">
+                <Button className="fs-4" variant="outline-primary" onClick={() => navigate('/search')}>Search for a Movie</Button>
+                <Button className="fs-4 mx-5" variant="outline-primary" onClick={() => navigate('/submit')}>Submit a New Movie</Button>
+                <Button className="fs-4" variant="outline-primary" onClick={() => navigate('/edit')}>Edit a Movie</Button>
+            </div>
+        </Card>
+    )
+}
 ```
-./client/src/pages/landing/index.js
-``` -->
+- In this code, here I've specified the props header, footer, and classes. 
+  - Bonus: Why would I use a useMemo hook for this?
+- I've also passed a `<div>` for the children prop (the one with the className `landing-body`) 
+- There's also an example of using another of the hooks featured in react-router, <u>*useNavigate()*</u>
+  - This hook returns a function that you can invoke (such as on the click of a button, as I did here) to trigger a navigation similar to clicking on a link. 
+  - What is an alternative component from react-router I could use to achieve this same effect? 
 
+# 3: Working with data in React
+### (A): <u>Take a look at our example dataset</u>
+[Click here to pull up our data in JSON format](./server/database/seed/backups/movieData.json)
+```
+./server/database/seed/backups/movieData.json
+```
+  - Here you can see what our dataset looks like,
+```js
+  {
+    "title": "Everything Everywhere All at Once",
+    "description": "A Chinese-American woman embarks on an epic multiverse journey to save existence.",
+    "year": 2022,
+    "id": "Everything%20Everywhere%20All%20at%20Once"
+  }
+```
+  - and how these objects map to our mongoose model
+```js
+  const schema = new mongoose.Schema({
+    title: {type: String, required: true}, 
+    description: {type: String, required: true}, 
+    year:  {type: Number, required: true},
+    id: {type: String, required: true}
+  })
+```
+
+  ### (B): <u>Pull up the file for the Search Page component, which can be found at</u>
+[Click here to pull up Search Page Component](./client/src/pages/search/index.js)
+```
+./client/src/pages/search/index.js
+```
 
 
 
